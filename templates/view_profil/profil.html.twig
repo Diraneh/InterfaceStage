@@ -1,0 +1,170 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProfilAppremantController!{% endblock %}
+
+{% block body %}
+ {%include("partialcand/navbarcand.html.twig")%}
+ {%for profile in profileAppremant %}
+<div class="container-fluid">
+    <div class="team-single">
+        <div class="row">
+            <div class="col-lg-4 col-md-5 xs-margin-20px-bottom">
+                <div class="team-single-img">
+                 <center>   <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="">
+                </center>
+                </div>
+                <div class="bg-light-gray padding-30px-all md-padding-55px-all sm-padding-20px-all ">
+                    <h4 class="margin-left:-150px,margin-10px-bottom font-size24 md-font-size22 sm-font-size20 font-weight-600">{{profile.Nom}}<p></p>{{profile.Prenom}}</h4>
+                    <p class="sm-width-95 sm-margin-auto">We are proud of child student. We teaching great activities and best program for your kids.</p>
+                    <i class="fas fa-map-marker-alt text-green"></i>
+                    <strong class="margin-10px-left text-green">Address:</strong> {{profile.Adress}} <br><br>
+                  
+                     <i class="fas fa-mobile-alt text-purple"></i>
+                     <strong class="margin-10px-left xs-margin-four-left text-purple">Phone:</strong>{{profile.Telephonne}}<br><br>
+                      <i class="fas fa-envelope text-pink"></i>
+                    <strong class="margin-10px-left xs-margin-four-left text-pink">Email:</strong>{{profile.Email}}<br><br>
+                        <div class="margin-20px-top team-single-icons">
+                        <ul class="no-margin">
+                            <li><a href="javascript:void(0)"><i class="fab fa-linkedin"></i></a></li>
+                            <li><i class="fab fa-github"><a href="{{profile.Liengithub}}"></a></i></li>
+                            <li><a href="javascript:void(0)"><i class="fa fa-briefcase" aria-hidden="true"></i></a></li>
+                            <li><a href="javascript:void(0)"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                 <div id="mapDiv"></div>
+                 <style>
+   #mapDiv {
+    /* Modifier la taille de la carte avec width et height */
+    width:500px;
+    height:500px;
+    border:1px solid #efefef;
+    margin-left:-30px
+   
+   }
+  </style>
+                    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+  <script>
+    
+   // On vérifie si le navigateur supporte la géolocalisation
+   if(navigator.geolocation) {
+    
+    function hasPosition(position) {
+    // Instanciation
+     var point = new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+     
+     // Ajustage des paramètres
+     myOptions = {
+      zoom: 15,
+      center: point,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+     },
+     
+     // Envoi de la carte dans la div
+     mapDiv = document.getElementById("mapDiv"),
+     map = new google.maps.Map(mapDiv, myOptions),
+     
+     marker = new google.maps.Marker({
+      position: point,
+      map: map,
+      // Texte du point
+      title: "Vous êtes ici"
+      });
+    }
+    navigator.geolocation.getCurrentPosition(hasPosition);
+   }
+  </script>
+                  
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-md-7">
+                <div class="team-single-text padding-50px-left sm-no-padding-left">
+                   
+                   
+                  <center>    <h4 class="font-size38 sm-font-size32 xs-font-size30" style="color:red" >Compétences
+</h4></center>
+                     <div class="container" style="padding:50px">
+                     <div class="row">
+                     <div class="col-4 col-md-4 col-lg-4">
+                       <img class="d-block" src="{{asset(profile.CompetenceUn)}}" alt="Third slide"  width="120">
+                      </div>
+                     <div class="col-4 col-md-4 col-lg-4">
+                       <img class="d-block" src="{{asset(profile.CompetenceDeux)}}" alt="Third slide" width="120">
+                      </div>
+                     <div class="col-4 col-md-4 col-lg-4">
+                     
+                          <img class="d-block " src="{{asset(profile.CompetenceTrois)}}" alt="Third slide" width="120">
+                       </div>
+                      
+                      </div>
+                      </div>
+                      <div class="container" style="padding:50px">
+                     <div class="row">
+                     <div class="col-4 col-md-4 col-lg-4">
+                        <img class="d-block " src="{{asset(profile.CompetenceCinq)}}"alt="Third slide" width="120" >
+                     </div>
+                     <div class="col-4 col-md-4 col-lg-4">
+                         <img class="d-block " src="{{asset(profile.CompetenceSix)}}" alt="Third slide" width="80" >
+                       </div> 
+                       <div class="col-4 col-md-4 col-lg-4">
+ 
+                        <img class="d-block " src="{{asset(profile.CompetenceQuatre)}}" alt="Third slide" width="80">
+                      
+                      </div> 
+                       </div>  
+
+                            
+                      </div>
+                      </div>
+                       <div class="container" style="padding:50px">
+                     <div class="row">
+                    
+                      </div>
+                       </div>
+                        <center>    <h4 class="font-size38 sm-font-size32 xs-font-size30" style="color:red" >Expériences</h4></center>
+                    <div class="container-fluid" style="padding:50px">
+                        <ul class="list-style9 no-margin">
+                            <li>
+
+                                <div class="contenaire-fluid">
+                                <div class="row">
+                                    <div class="col-md-5 col-5">
+                                       <h1>Sogeti</h1>
+                                    </div>
+                                    <div class="col-md-7 col-7">
+                                        <h1>Développeur & Testeur Java</h1>
+                                        <p> Développement back-end du site en Java
+selon le Design Patterns MVC
+Développement et Tests d’un projet Spring Boot                         </p>
+                                    </div>
+                                </div>
+
+                            </li>
+                           
+                          <li>
+
+                                <div class="contenaire-fluid">
+                                <div class="row">
+                                    <div class="col-md-5 col-5">
+                                       <h1>UnSolite</h1>
+                                    </div>
+                                    <div class="col-md-7 col-7">
+                                        <h1>Développeur Web </h1>
+                                        <p> la plateforme de salon virtuel : amélioration et correction de bugs,  Docker , Réferancement, hébergement et testing ).                        </p>
+                                    </div>
+                                </div>
+
+                            </li>
+                           
+                         
+                         
+                        </ul>
+                    </div>
+
+                 
+
+                   
+    </div>
+</div>
+ {% endfor %}
+{% endblock %}

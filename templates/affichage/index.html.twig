@@ -1,0 +1,40 @@
+{% extends 'bassecandida.html.twig' %}
+
+{% block title %}Hello CandidatureController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+ {%include("partialcand/navbarcand.html.twig")%}
+ {% for forment in  formentreprise %}
+<div class="container" style="padding:30px">
+       <div class="row">    
+           <div class="col-xs-8 col-xs-offset-2">
+               <div class="input-group">
+                   <input type="text" class="form-control" name="x" placeholder="Search term...">
+                   <span class="input-group-btn">
+                       <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                   </span>
+               </div>
+           </div>
+       </div>
+</div>
+
+
+<div class="container-fluid">
+<div class="row">
+ <div class="col-12 col-xl-12 mx-auto">
+ <div class="card card-signin flex-row my-10">
+ <div class="card-body">
+<h1>{{ forment.Nomentreprise}}</h1>
+<p>{{ forment.Adressentreprise}}</p>
+
+
+</div>
+</div>
+</div>
+ {% endfor %} 
+{% endblock %}

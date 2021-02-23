@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AffichelistedecandidatureController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+{%include("partialcand/navbarcand.html.twig")%}
+
+   
+<button type="submit" class="btn btn-danger">
+
+  <a class="nav-link" href="{{path('listecondidatures')}}" style="color:white">Ajouter dans la liste de candidature Envoyer</a></button>
+
+
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Entreprise Contact</th>
+      <th scope="col">Date de la demande</th>
+      <th scope="col">Date de la relance</th>
+      <th scope="col">Date de la demande</th>
+      <th scope="col">Statut</th>
+   
+      
+    </tr>
+  </thead>
+  <tbody>
+ <tr>
+
+       </td>
+       
+       
+    </tr>
+       {% for forment in  formentliste %}
+    <tr>
+      
+     <td >{{forment.EntrepriseContact}}</td>
+      <td>{{forment.datedemande}}</td>
+      <td>{{forment.daterelance}}</td>
+      <td>{{forment.dateentretient}}</td>
+       <td>{{forment.Statut1}}</td>
+
+       
+   {% endfor %}
+         
+    </tr>
+  </tbody>
+</table>
+     
+
+{% endblock %}
+
+
+

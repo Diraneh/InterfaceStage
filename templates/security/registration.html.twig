@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block title %}Admin{% endblock %}
+
+{% block body %}
+
+
+
+  
+{% form_theme form 'bootstrap_4_layout.html.twig'%}
+
+{{ form_start(form)}}
+
+<div class="container">
+<div class="row">
+ <div class="col-lg-10 col-xl-9 mx-auto">
+ <div class="card card-signin flex-row my-5">
+ <div class="card-body">
+            <h5 class="card-title text-center">Inscription</h5>
+            
+              <div class="form-label-group">
+{{ form_row(form.Email,{'attr':{'placeholder':"Veuillez saisir votre email"}})}}
+
+</div>
+<div class="form-label-group">
+{{ form_row(form.Username,{'attr':{'placeholder':"Veuillez saisir votre nom d'utilisateur"}})}}
+
+</div>
+<div class="form-label-group">
+{{ form_row(form.Password,{'attr':{'placeholder':"Veuillez saisir votre mots de passe"}})}}
+</div>
+
+<div class="form-label-group">
+{{ form_row(form.Confirm_password,{'attr':{'placeholder':"Veuillez confirme votre mots de passe"}})}}
+</div>
+
+<button type="submit" class="btn btn-lg btn-facebook btn-block">Inscription</button>
+
+{{ form_end(form)}}
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+  
+{% endblock %}

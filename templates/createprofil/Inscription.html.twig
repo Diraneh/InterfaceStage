@@ -1,0 +1,119 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello InscriptionController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+
+
+{{ form_start(formajouter)}}
+
+<div class="container-fluid">
+    <div class="row">
+        
+      
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Profile Settings</h4>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6">{{ form_row(formajouter.Prenom,{'attr':{'placeholder':"Titre du project"}})}}</div>
+                    <div class="col-md-6">{{ form_row(formajouter.Nom,{'attr':{'placeholder':"description du project"}})}}</div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12">{{ form_row(formajouter.Adress,{'attr':{'placeholder':"image"}})}}</div>
+                    <div class="col-md-12">{{ form_row(formajouter.Codepostale,{'attr':{'placeholder':"lien github"}})}}
+</div>
+                    <div class="col-md-12">
+{{ form_row(formajouter.ville,{'attr':{'placeholder':"lien du weblink"}})}}
+</div>
+                    <div class="col-md-12">
+{{ form_row(formajouter.Telephonne,{'attr':{'placeholder':"Titre du project"}})}}
+</div>
+                    <div class="col-md-12">
+{{ form_row(formajouter.Email,{'attr':{'placeholder':"description du project"}})}}</div>
+                    <div class="col-md-12">
+{{ form_row(formajouter.Lienportfolio,{'attr':{'placeholder':"image"}})}}</div>
+                    <div class="col-md-12">
+{{ form_row(formajouter.Liengithub,{'attr':{'placeholder':"lien github"}})}}</div>
+                    <div class="col-md-12">
+{{ form_row(formajouter.lienCV,{'attr':{'placeholder':"lien du weblink"}})}}
+</div>
+
+                    <div class="col-md-12">
+{{ form_row(formajouter.promotion,{'attr':{'placeholder':"lien du weblink"}})}}
+</div>
+
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+{{ form_row(formajouter.Avatar,{'attr':{'placeholder':"lien github"}})}}</div>
+                    <div class="col-md-6">
+{{ form_row(formajouter.CompetenceUn,{'attr':{'placeholder':"lien du weblink"}})}}
+</div>
+
+ <div class="col-md-6">
+{{ form_row(formajouter.CompetenceDeux,{'attr':{'placeholder':"lien du weblink"}})}}
+</div>
+
+ <div class="col-md-6">
+{{ form_row(formajouter.CompetenceTrois,{'attr':{'placeholder':"lien du weblink"}})}}
+</div>
+
+ <div class="col-md-6">
+{{ form_row(formajouter.CompetenceQuatre,{'attr':{'placeholder':"lien du weblink"}})}}
+</div>
+
+ <div class="col-md-6">
+{{ form_row(formajouter.CompetenceCinq,{'attr':{'placeholder':"lien du weblink"}})}}
+</div>
+
+ <div class="col-md-6">
+{{ form_row(formajouter.CompetenceSix,{'attr':{'placeholder':"lien du weblink"}})}}
+</div>
+                    <div class="col-md-6">
+{{ form_row(formajouter.Mobilite,{'attr':{'placeholder':"Titre du project"}})}}
+</div>
+                     <div class="col-md-6">
+{{ form_row(formajouter.ZonneMobilite,{'attr':{'placeholder':"description du project"}})}}
+</div>
+                     
+                </div>
+                <div class="mt-5 text-center">
+<button type="submit" class="btn btn-secondary">Enregistre</button></div>
+            </div>
+        </div>
+
+        
+
+         
+        
+</div>
+</div>
+</div>
+
+{{ form_end(formajouter) }}                                            
+{% endblock %}
